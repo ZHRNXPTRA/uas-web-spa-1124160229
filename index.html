@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Pembayaran Kebab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a0522d', // brownish
+            accent: '#ffb347', // kebab orange
+            surfaceDark: '#1c1c1c'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fade-in 0.4s ease-out; }
+
+    @media print {
+      body * { visibility: hidden; }
+      #successModal, #successModal * { visibility: visible; }
+      #successModal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+        padding: 1cm;
+        box-shadow: none;
+      }
+      #progressBar,
+      #closeSuccessModal,
+      #printInvoiceBtn,
+      header,
+      main,
+      template,
+      script {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-[#fff5e6] via-[#ffe5b4] to-[#ffd6a5] dark:bg-surfaceDark text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+  
+    <!-- Header -->
+  <header class="flex flex-col items-center text-center py-10 px-4 bg-[#fff0d9] dark:bg-zinc-900 shadow-sm rounded-b-3xl">
+    <img src="assets/image.png" alt="Foto Profil" class="w-20 mt-4 h-20 rounded-lg object-cover ring-4 ring-white dark:ring-zinc-700 shadow-lg mb-4" />
+    <h1 class="text-3xl font-bold text-primary dark:text-accent tracking-wide">Portal Pembayaran Kebab</h1>
+    <p class="text-sm font-medium opacity-80">Global Instituted</p>
+    <p class="text-xs opacity-70">(NIM: 1124160229) - (Nama: Muhamad Zahran Putra Ariyatna)</p>
+    <button id="darkModeToggle" class="mt-4 px-5 py-2 bg-primary dark:bg-accent text-white rounded-full text-sm font-semibold hover:opacity-90 transition-transform">Toggle Tema ☀️ / 🌙</button>
+  </header>
+
+  
+    <!-- Tambahkan file script.js sesuai fungsionalitas -->
+  <script src="script.js"></script>
+</body>
+</html>
